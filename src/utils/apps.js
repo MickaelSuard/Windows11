@@ -46,13 +46,13 @@ const apps = [
     type: "app",
     action: "MSEDGE",
   },
-  {
-    name: "Buy me a coffee",
-    icon: "buyme",
-    type: "app",
-    action: "EXTERNAL",
-    payload: "https://www.buymeacoffee.com/blueedgetechno",
-  },
+  // {
+  //   name: "Buy me a coffee",
+  //   icon: "buyme",
+  //   type: "app",
+  //   action: "EXTERNAL",
+  //   payload: "https://www.buymeacoffee.com/blueedgetechno",
+  // },
   {
     name: "Store",
     icon: "store",
