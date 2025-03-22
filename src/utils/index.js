@@ -6,7 +6,7 @@ var { taskbar, desktop, pinned, recent } = {
     "Settings",
     "File Explorer",
     "Browser",
-    "Store",
+    // "Store",
     "Spotify",
   ],
   desktop: (localStorage.getItem("desktop") &&
