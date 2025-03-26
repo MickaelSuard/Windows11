@@ -25,7 +25,7 @@ export const Mail = () => {
         setWhiteScreen(true);
         setTimeout(() => {
           setWhiteScreen(false);
-        }, 5000); // Increased white screen duration to 5 seconds
+        }, 500); // Increased white screen duration to 5 seconds
       }, 2000); // Error message duration remains 2 seconds
     }, 5000); // Initial delay before showing the error
 
@@ -67,7 +67,9 @@ export const Mail = () => {
   };
 
   if (whiteScreen) {
-    return <div className="white-screen"></div>;
+    return <div
+    className="white-screen"
+  ></div>;
   }
 
   return (
