@@ -129,8 +129,7 @@ const apps = [
     name: "Mail",
     icon: "mail",
     type: "app",
-    action: "EXTERNAL",
-    payload: "mailto:blueedgetechno@gmail.com",
+    action: "mailAPP",
   },
   {
     name: "Movies",
