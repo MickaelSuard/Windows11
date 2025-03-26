@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { ToolBar } from "../../../utils/general";
 import "./assets/mail.scss";
@@ -14,6 +14,23 @@ export const Mail = () => {
   const [selectedEmail, setSelectedEmail] = useState(null);
   const [composeMode, setComposeMode] = useState(false);
   const [newEmail, setNewEmail] = useState({ to: "", subject: "", content: "" });
+  const [errorVisible, setErrorVisible] = useState(false);
+  const [whiteScreen, setWhiteScreen] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setErrorVisible(true);
+      setTimeout(() => {
+        setErrorVisible(false);
+        setWhiteScreen(true);
+        setTimeout(() => {
+          setWhiteScreen(false);
+        }, 5000); // Increased white screen duration to 5 seconds
+      }, 2000); // Error message duration remains 2 seconds
+    }, 5000); // Initial delay before showing the error
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleFolderClick = (folder) => {
     setSelectedFolder(folder);
@@ -49,6 +66,10 @@ export const Mail = () => {
     setSelectedEmail(null);
   };
 
+  if (whiteScreen) {
+    return <div className="white-screen"></div>;
+  }
+
   return (
     <div
       className="mail floatTab dpShad"
@@ -68,6 +89,12 @@ export const Mail = () => {
         name="Mail"
         invert
       />
+      {errorVisible && (
+        <div className="error-popup">
+          <h2>Error</h2>
+          <p>An unexpected error occurred. Please try again later.</p>
+        </div>
+      )}
       <div className="windowScreen flex">
         {/* Sidebar for folders */}
         <div className="mail-sidebar">
@@ -133,9 +160,11 @@ export const Mail = () => {
                   className="mail-item"
                   onClick={() => handleEmailClick(email)}
                 >
-                  <div className="mail-sender">{email.sender}</div>
-                  <div className="mail-subject">{email.subject}</div>
-                  <div className="mail-date">{email.date}</div>
+                  <>
+                    <div className="mail-sender">{email.sender}</div>
+                    <div className="mail-subject">{email.subject}</div>
+                    <div className="mail-date">{email.date}</div>
+                  </>
                 </div>
               ))}
             </div>
