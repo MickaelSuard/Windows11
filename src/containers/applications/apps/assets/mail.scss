@@ -1,0 +1,235 @@
+.mail {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f3f3f3;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+
+  .mail-toolbar {
+    background-color: #0078d4;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    border-bottom: 1px solid #ccc;
+
+    .toolbar-buttons {
+      display: flex;
+      gap: 10px;
+
+      .button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &.close {
+          background-color: #ff5f56;
+        }
+
+        &.maximize {
+          background-color: #ffbd2e;
+        }
+
+        &.minimize {
+          background-color: #27c93f;
+        }
+      }
+    }
+
+    .toolbar-title {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  }
+
+  .mail-sidebar {
+    width: 20%;
+    background-color: #ffffff;
+    border-right: 1px solid #ddd;
+    padding: 10px;
+    box-sizing: border-box;
+
+    .compose-button {
+      background-color: #0078d4;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+
+      &:hover {
+        background-color: #005a9e;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #f0f0f0;
+        }
+
+        &.active {
+          background-color: #0078d4;
+          color: white;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .mail-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+    .mail-header {
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .mail-list {
+      flex-grow: 1;
+      overflow-y: auto;
+      margin-top: 10px;
+
+      .mail-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #f9f9f9;
+        }
+
+        .mail-sender {
+          font-weight: bold;
+        }
+
+        .mail-subject {
+          flex-grow: 1;
+          margin-left: 10px;
+          color: #555;
+        }
+
+        .mail-date {
+          color: #999;
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .email-list {
+      .mail-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #f9f9f9;
+        }
+
+        .mail-sender {
+          font-weight: bold;
+        }
+
+        .mail-subject {
+          flex-grow: 1;
+          margin-left: 10px;
+          color: #555;
+        }
+
+        .mail-date {
+          color: #999;
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .email-details {
+      h2 {
+        margin-bottom: 10px;
+      }
+
+      p {
+        margin: 5px 0;
+      }
+
+      .email-actions {
+        margin-top: 10px;
+
+        button {
+          background-color: #0078d4;
+          color: white;
+          border: none;
+          padding: 10px;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-right: 10px;
+
+          &:hover {
+            background-color: #005a9e;
+          }
+        }
+      }
+    }
+
+    .compose-email {
+      display: flex;
+      flex-direction: column;
+
+      input, textarea {
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .compose-actions {
+        display: flex;
+        justify-content: flex-end;
+
+        button {
+          background-color: #0078d4;
+          color: white;
+          border: none;
+          padding: 10px;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-left: 10px;
+
+          &:hover {
+            background-color: #005a9e;
+          }
+        }
+      }
+    }
+  }
+}

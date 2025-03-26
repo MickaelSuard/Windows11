@@ -129,7 +129,7 @@ const apps = [
     name: "Mail",
     icon: "mail",
     type: "app",
-    action: "mailAPP",
+    action: "MAILAPP",
   },
   {
     name: "Movies",
